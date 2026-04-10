@@ -1,7 +1,12 @@
 # Founder OS — Founder Operating System
 
-A lightweight productivity tool for early-stage founders to capture messy thoughts and convert them into structured tasks, risks, goals, and reminders.
+## 🧠 Problem
+Early-stage founders operate in constant chaos — ideas, tasks, risks, and decisions are scattered across notes, messages, and mental load. There is no structured system that understands how different types of inputs require different workflows.
 
+## 💡 Solution
+Founder OS converts unstructured thoughts into structured, actionable items like tasks, risks, goals, and reminders — helping founders operate with clarity and focus.
+
+A lightweight productivity tool for early-stage founders to capture messy thoughts and convert them into structured tasks, risks, goals, and reminders.
 ---
 
 ## Features
@@ -52,15 +57,15 @@ Frontend: http://localhost:5173 | Backend: http://localhost:8000
 
 ## API Endpoints
 
-| Method | Endpoint               | Description                      |
-|--------|------------------------|----------------------------------|
-| POST   | /parse-input           | Parse free-form text, save items |
-| GET    | /items                 | Fetch all items                  |
-| POST   | /items                 | Create item manually             |
-| PATCH  | /items/{id}            | Update item status               |
-| GET    | /videos                | Fetch all videos                 |
-| GET    | /dictionary            | Fetch all dictionary entries     |
-| GET    | /dictionary/search?q=  | Search dictionary                |
+| Method | Endpoint              | Description                      |
+| ------ | --------------------- | -------------------------------- |
+| POST   | /parse-input          | Parse free-form text, save items |
+| GET    | /items                | Fetch all items                  |
+| POST   | /items                | Create item manually             |
+| PATCH  | /items/{id}           | Update item status               |
+| GET    | /videos               | Fetch all videos                 |
+| GET    | /dictionary           | Fetch all dictionary entries     |
+| GET    | /dictionary/search?q= | Search dictionary                |
 
 ---
 
@@ -69,19 +74,19 @@ Frontend: http://localhost:5173 | Backend: http://localhost:8000
 Input: "Need to finalize vendor agreement, gym from tomorrow, investor follow-up Friday, confused about ESOP structure"
 
 Output:
-- Task → Finalize vendor agreement (High, Legal)
-- Goal → Gym from tomorrow (Low, Personal)
-- Reminder → Investor follow-up Friday (High, Business)
-- Risk → Confused about ESOP structure (High, Legal)
 
+-Task → Finalize vendor agreement (High, Legal)
+-Goal → Gym from tomorrow (Low, Personal)
+-Reminder → Investor follow-up Friday (High, Business)
+-Risk → Confused about ESOP structure (High, Legal)
 ---
 
 ## Assumptions
 
 - Parser is fully rule-based (no ML/AI APIs)
-- SQLite for simplicity; PostgreSQL recommended for production
-- Videos and dictionary seeded via seed_data.py
-- All timestamps are UTC
+-SQLite for simplicity; PostgreSQL recommended for production
+-Videos and dictionary seeded via seed_data.py
+-All timestamps are UTC
 
 ---
 
@@ -91,3 +96,10 @@ Output:
 - Recurring reminders with notifications
 - AI-assisted parsing (optional upgrade path)
 - Export to Notion / CSV
+  
+🎯 What This Demonstrates
+
+-Strong system design thinking
+-Full-stack development (React + FastAPI)
+-Real-world problem solving
+-Scalability awareness 
