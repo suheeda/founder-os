@@ -1,11 +1,5 @@
 # Founder OS — Founder Operating System
 
-## 🧠 Problem
-Early-stage founders operate in constant chaos — ideas, tasks, risks, and decisions are scattered across notes, messages, and mental load. There is no structured system that understands how different types of inputs require different workflows.
-
-## 💡 Solution
-Founder OS converts unstructured thoughts into structured, actionable items like tasks, risks, goals, and reminders — helping founders operate with clarity and focus.
-
 A lightweight productivity tool for early-stage founders to capture messy thoughts and convert them into structured tasks, risks, goals, and reminders.
 
 ---
@@ -31,19 +25,6 @@ A lightweight productivity tool for early-stage founders to capture messy though
 
 ---
 
-## 📈 Scaling Consideration
-
-At scale (50,000+ daily users):
-
-- SQLite will fail due to file-level locking and concurrency limitations
-- This can lead to `database is locked` errors under heavy load
-
-### Solution
-- Migrate to PostgreSQL
-- Enables concurrent reads/writes and better performance under scale
-
----
-
 ## Setup Instructions
 
 ### Backend
@@ -55,46 +36,58 @@ source venv/bin/activate
 pip install -r requirements.txt
 python seed_data.py
 uvicorn main:app --reload --port 8000
+```
 
-Frontend
+### Frontend
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-Frontend: http://localhost:5173
- | Backend: http://localhost:8000
+Frontend: http://localhost:5173 | Backend: http://localhost:8000
 
-API Endpoints
-Method	Endpoint	Description
-POST	/parse-input	Parse free-form text, save items
-GET	/items	Fetch all items
-POST	/items	Create item manually
-PATCH	/items/{id}	Update item status
-GET	/videos	Fetch all videos
-GET	/dictionary	Fetch all dictionary entries
-GET	/dictionary/search?q=	Search dictionary
-Sample Input / Output
+---
+
+## API Endpoints
+
+| Method | Endpoint               | Description                      |
+|--------|------------------------|----------------------------------|
+| POST   | /parse-input           | Parse free-form text, save items |
+| GET    | /items                 | Fetch all items                  |
+| POST   | /items                 | Create item manually             |
+| PATCH  | /items/{id}            | Update item status               |
+| GET    | /videos                | Fetch all videos                 |
+| GET    | /dictionary            | Fetch all dictionary entries     |
+| GET    | /dictionary/search?q=  | Search dictionary                |
+
+---
+
+## Sample Input / Output
 
 Input: "Need to finalize vendor agreement, gym from tomorrow, investor follow-up Friday, confused about ESOP structure"
 
 Output:
+- Task → Finalize vendor agreement (High, Legal)
+- Goal → Gym from tomorrow (Low, Personal)
+- Reminder → Investor follow-up Friday (High, Business)
+- Risk → Confused about ESOP structure (High, Legal)
 
-Task → Finalize vendor agreement (High, Legal)
-Goal → Gym from tomorrow (Low, Personal)
-Reminder → Investor follow-up Friday (High, Business)
-Risk → Confused about ESOP structure (High, Legal)
-Assumptions
-Parser is fully rule-based (no ML/AI APIs)
-SQLite for simplicity; PostgreSQL recommended for production
-Videos and dictionary seeded via seed_data.py
-All timestamps are UTC
-Future Improvements
-User authentication
-Recurring reminders with notifications
-AI-assisted parsing (optional upgrade path)
-Export to Notion / CSV
-🎯 What This Demonstrates
-Strong system design thinking
-Full-stack development (React + FastAPI)
-Real-world problem solving
-Scalability awareness
+---
+
+## Assumptions
+
+- Parser is fully rule-based (no ML/AI APIs)
+- SQLite for simplicity; PostgreSQL recommended for production
+- Videos and dictionary seeded via seed_data.py
+- All timestamps are UTC
+
+---
+
+## Future Improvements
+
+- User authentication
+- Recurring reminders with notifications
+- AI-assisted parsing (optional upgrade path)
+- Export to Notion / CSV
