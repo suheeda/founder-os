@@ -6,8 +6,7 @@ Early-stage founders operate in constant chaos — ideas, tasks, risks, and deci
 ## 💡 Solution
 Founder OS converts unstructured thoughts into structured, actionable items like tasks, risks, goals, and reminders — helping founders operate with clarity and focus.
 
-A lightweight productivity tool for early-stage founders to capture messy thoughts and convert them into structured tasks, risks, goals, and reminders.
----
+* A lightweight productivity tool for early-stage founders to capture messy thoughts and convert them into structured tasks, risks, goals, and reminders. *
 
 ## Features
 
