@@ -75,11 +75,10 @@ Input: "Need to finalize vendor agreement, gym from tomorrow, investor follow-up
 
 Output:
 
--Task → Finalize vendor agreement (High, Legal)
--Goal → Gym from tomorrow (Low, Personal)
--Reminder → Investor follow-up Friday (High, Business)
--Risk → Confused about ESOP structure (High, Legal)
----
+- Task → Finalize vendor agreement (High, Legal)  
+- Goal → Gym from tomorrow (Low, Personal)  
+- Reminder → Investor follow-up Friday (High, Business)  
+- Risk → Confused about ESOP structure (High, Legal)
 
 ## Assumptions
 
